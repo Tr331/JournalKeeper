@@ -35,7 +35,7 @@ public class JournalManager {
     }
 
     public void saveEntries(){
-        journalRepository.saveALlEntries(journalService.getEntries());
+        journalRepository.saveAllEntries(journalService.getEntries());
     }
 
 }

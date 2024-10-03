@@ -45,7 +45,7 @@ public class JournalFileRepository implements JournalRepository {
     }
 
     @Override
-    public void saveALlEntries(List<Journal> journalList) {
+    public void saveAllEntries(List<Journal> journalList) {
         List<String> stringList = journalList.stream().map(Journal::toString).toList();
 
         try {
