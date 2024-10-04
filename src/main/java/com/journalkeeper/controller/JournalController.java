@@ -1,4 +1,4 @@
-package com.journalkeeper;
+package com.journalkeeper.controller;
 
 import com.journalkeeper.repository.JournalFileRepository;
 import com.journalkeeper.repository.JournalRepository;
@@ -7,19 +7,15 @@ import com.journalkeeper.service.JournalService;
 import java.nio.file.Path;
 import java.time.LocalDate;
 
-public class JournalManager {
-    private JournalService journalService;
-    private JournalRepository journalRepository;
+public class JournalController {
+    private final JournalService journalService;
 
-    public JournalManager(Path path){
-        this.journalService = new JournalService();
-        this.journalRepository = new JournalFileRepository(path);
-        loadEntries();
+    public JournalController(JournalService journalService){
+        this.journalService = journalService;
     }
 
     public void addEntry(LocalDate date, String entry){
         journalService.addEntry(date,entry);
-        saveEntries();
     }
 
     public void printAllEntries(){
@@ -28,14 +24,6 @@ public class JournalManager {
         }else {
             System.out.println("Journal file is empty. No entries to load.");
         }
-    }
-
-    private void loadEntries() {
-        journalService.getEntries().addAll(journalRepository.readAllEntries());
-    }
-
-    public void saveEntries(){
-        journalRepository.saveAllEntries(journalService.getEntries());
     }
 
 }
