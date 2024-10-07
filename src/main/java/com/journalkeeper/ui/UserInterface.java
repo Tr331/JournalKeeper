@@ -1,7 +1,9 @@
 package com.journalkeeper.ui;
 
+import com.journalkeeper.controller.JournalController;
+
 public interface UserInterface {
-    void start();           // Start the UI (common to CLI and JavaFX)
-    void addEntry();        // Handles adding an entry (triggered by a CLI input or a button in JavaFX)
-    void display();
+    void initialize(JournalController controller);
+    void show();
+    void close();
 }

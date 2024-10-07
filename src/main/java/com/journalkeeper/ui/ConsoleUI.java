@@ -9,13 +9,17 @@ public class ConsoleUI implements UserInterface{
     private JournalController journalController;
     private Scanner scanner;
 
-    public ConsoleUI(Scanner scanner, JournalController journalController) {
+    public ConsoleUI(Scanner scanner) {
         this.scanner = scanner;
-        this.journalController = journalController;
     }
 
-    public void start() {
+    @Override
+    public void initialize(JournalController controller) {
+        this.journalController = controller;
+    }
 
+    @Override
+    public void show() {
         while (true) {
             display();
             String userInput = scanner.nextLine().trim();
@@ -30,7 +34,6 @@ public class ConsoleUI implements UserInterface{
                 case "3":
                     System.out.println("Exiting Journal Keeper. Goodbye!");
                     return;
-
                 default:
                     System.out.println("Invalid option. Please choose a valid number.");
             }
@@ -38,7 +41,11 @@ public class ConsoleUI implements UserInterface{
     }
 
     @Override
-    public void addEntry() {
+    public void close() {
+        // No specific close action needed for console UI
+    }
+
+    private void addEntry() {
         try {
             System.out.println("Enter date (YYYY-MM-DD):");
             LocalDate date = LocalDate.parse(scanner.nextLine());
@@ -46,16 +53,14 @@ public class ConsoleUI implements UserInterface{
             System.out.println("Enter your journal entry:");
             String entry = scanner.nextLine();
 
-            journalController.addEntry(date,entry);
+            journalController.addEntry(date, entry);
             System.out.println("Entry added successfully!");
-
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Invalid input. Please try again.");
         }
     }
 
-    @Override
-    public void display() {
+    private void display() {
         System.out.println("********* Journal Keeper *********");
         System.out.println("1. Add a new journal entry");
         System.out.println("2. View all journal entries");
