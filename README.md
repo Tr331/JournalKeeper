@@ -9,6 +9,11 @@ JournalKeeper is a simple, modular Java application designed for storing, managi
 - **File-Based Storage**: Entries are saved to and read from a file, making them persistent across application runs.
 - **Separation of Concerns**: Business logic, data storage, and user interaction are handled in separate layers, adhering to SOLID principles.
 
+## Preview
+![image](https://github.com/user-attachments/assets/6af4a76f-7caf-4fab-aa5f-8003fc548f25)
+![image](https://github.com/user-attachments/assets/37618fa7-4049-454d-b181-cafb3a6ef79e)
+![image](https://github.com/user-attachments/assets/a251d2a4-807f-452b-a30e-c15d807b84a0)
+
 ## Requirements
 
 - **Java 21** or higher
@@ -47,5 +52,3 @@ Future Enhancements
 License
 
 This project is licensed under the apache 2.0 license - see the LICENSE file for details.
-
-vbnet
