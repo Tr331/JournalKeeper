@@ -11,7 +11,6 @@ target/
 *.iws
 *.iml
 *.ipr
-.idea/
 
 ### Eclipse ###
 .apt_generated
@@ -37,3 +36,9 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+# Ignore the .idea directory
+.idea/
+
+# Ignore the journal.txt file
+journal.txt
