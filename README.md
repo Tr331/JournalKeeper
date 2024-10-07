@@ -11,8 +11,6 @@ JournalKeeper is a simple, modular Java application designed for storing, managi
 
 ## Preview
 ![image](https://github.com/user-attachments/assets/6af4a76f-7caf-4fab-aa5f-8003fc548f25)
-![image](https://github.com/user-attachments/assets/37618fa7-4049-454d-b181-cafb3a6ef79e)
-![image](https://github.com/user-attachments/assets/a251d2a4-807f-452b-a30e-c15d807b84a0)
 
 ## Requirements
 
