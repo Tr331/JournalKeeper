@@ -43,7 +43,7 @@ bash
 
 Future Enhancements
 
-    JavaFX Interface: Plan to transition from a CLI to a JavaFX graphical user interface.
+    JavaFX Interface: Plan to transition from a CLI to a JavaFX graphical user interface - Completed
     Database Storage: Future versions could include support for database-backed storage, abstracting the repository layer for easy swapping between storage mechanisms.
     Search Functionality: Add the ability to search journal entries by keywords or date range.
 
