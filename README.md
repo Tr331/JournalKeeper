@@ -49,7 +49,3 @@ License
 This project is licensed under the apache 2.0 license - see the LICENSE file for details.
 
 vbnet
-
-
-### Summary
-Your project is well on track with a clean structure. The provided `README.md` outlines how
