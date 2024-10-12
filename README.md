@@ -1,54 +1,72 @@
 # JournalKeeper
 
-JournalKeeper is a simple, modular Java application designed for storing, managing, and viewing personal journal entries. Built following SOLID design principles, the project is organized into clear layers, separating business logic, data persistence, and user interaction. The current version uses a command-line interface (CLI) for interacting with the journal, but it is structured for easy future extension to a graphical interface using JavaFX.
+**JournalKeeper** is a simple, modular Java application designed for storing, managing, and viewing personal journal entries. Built following SOLID design principles, the project is organized into clear layers, separating business logic, data persistence, and user interaction.
 
-## Features
+## 🌟 Features
 
-- **Add Journal Entries**: Users can add new journal entries with a specific date.
-- **View Entries**: Entries are stored and displayed in descending order by date.
-- **File-Based Storage**: Entries are saved to and read from a file, making them persistent across application runs.
-- **Separation of Concerns**: Business logic, data storage, and user interaction are handled in separate layers, adhering to SOLID principles.
+- **📝 Add Journal Entries**: Create new entries with a specific date using a date picker in the JavaFX interface.
+- **👀 View Entries**: Display entries in descending order by date in a neatly designed JavaFX table view.
+- **💾 File-Based Storage**: Save and read entries from a file, ensuring persistence across application runs.
+- **🏗️ Separation of Concerns**: Handle business logic, data storage, and user interaction in separate layers, adhering to SOLID principles.
 
-## Preview
-![image](https://github.com/user-attachments/assets/d5d82e8c-191e-43c7-981b-ec2f663cb43d)
-![image](https://github.com/user-attachments/assets/bf29ad87-ad05-4cc2-85e4-4e8f616ef62f)
-![image](https://github.com/user-attachments/assets/dd56bdf7-fa8c-4236-9731-65e612fe6d50)
+## 🖼️ Preview
 
-## Requirements
+![image](https://github.com/user-attachments/assets/8e2898dc-0ba9-4d5f-85c5-65b1a45874f5)
+![image](https://github.com/user-attachments/assets/e7e59c27-2b90-4d03-bad0-54447f2dcf1f)
+![image](https://github.com/user-attachments/assets/5caa99b6-335b-4c9c-a21a-298724c7377b)
 
-- **Java 21** or higher
-- **Maven/Gradle** (if you prefer build tools)
 
-## Getting Started
+## 🛠️ Requirements
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/Tr331/JournalKeeper.git
+- Java 21 or higher
+- Maven/Gradle (if using build tools)
 
-    Navigate to the Project Directory:
+## 🚀 Getting Started
 
-    bash
+### Clone the Repository:
 
+```bash
+git clone https://github.com/Tr331/JournalKeeper.git
 cd JournalKeeper
+```
 
-Compile and Run the Project: Use the following command to compile and run:
+### Compile and Run the Project:
 
-bash
+#### Using Maven:
 
-    javac -d bin src/main/java/com/journalkeeper/App.java
-    java -cp bin com.journalkeeper.App
+```bash
+mvn javafx:run
+```
 
-    Using the CLI:
-        Press 1 to add a journal entry.
-        Press 2 to view all stored entries.
-        Press 3 to exit the application.
+#### Using Gradle:
 
-Future Enhancements
+```bash
+./gradlew run
+```
 
-    JavaFX Interface: Plan to transition from a CLI to a JavaFX graphical user interface - Completed
-    Database Storage: Future versions could include support for database-backed storage, abstracting the repository layer for easy swapping between storage mechanisms.
-    Search Functionality: Add the ability to search journal entries by keywords or date range.
+#### Without Build Tools:
 
-License
+```bash
+javac --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls -d bin src/main/java/com/journalkeeper/App.java
+java --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls -cp bin com.journalkeeper.App
+```
 
-This project is licensed under the apache 2.0 license - see the LICENSE file for details.
+> **Note:** Replace `/path/to/javafx-sdk` with the actual path to your JavaFX SDK.
+
+## 📱 Using the JavaFX Application
+
+1. **Add Entry**: Click the "Add Entry" button to create a new journal entry.
+2. **Select Date**: Choose a date from the date picker.
+3. **Input Text**: Enter your journal text in the provided field.
+4. **View Entries**: All stored journal entries are displayed in the JavaFX table.
+5. **Clear Inputs**: Easily clear input fields after adding an entry.
+6. **Exit**: Click the "Exit" button to close the application.
+
+## 🔮 Future Enhancements
+
+- **🗄️ Database Storage**: Implement support for database-backed storage, abstracting the repository layer for easy swapping between storage mechanisms.
+- **🔍 Search Functionality**: Add the ability to search journal entries by keywords or date range.
+
+## 📄 License
+
+This project is licensed under the Apache 2.0 license - see the [LICENSE](LICENSE) file for details.
