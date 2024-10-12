@@ -22,9 +22,6 @@ public class App {
 //        UserInterface ui = new ConsoleUI(new Scanner(System.in));
 
         // For JavaFX UI
-        UserInterface ui = new GraphicalUI();
-
-        ui.initialize(controller);
-        ui.show();
+        GraphicalUI.launchUI(controller);
     }
 }

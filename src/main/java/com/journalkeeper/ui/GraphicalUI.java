@@ -15,14 +15,27 @@ import java.time.LocalDate;
 
 public class GraphicalUI extends Application implements UserInterface{
     private static JournalController journalController;
+    private static final Object lock = new Object();
 
-    public static void setJournalController(JournalController controller) {
-        journalController = controller;
+    public static void launchUI(JournalController controller) {
+        synchronized(lock) {
+            journalController = controller;
+        }
+        launch(GraphicalUI.class);
+    }
+
+    @Override
+    public void init() throws Exception {
+        synchronized(lock) {
+            if (journalController == null) {
+                throw new IllegalStateException("JournalController not set. Use launchUI method to start the application.");
+            }
+        }
     }
 
     @Override
     public void initialize(JournalController controller) {
-        setJournalController(controller);
+
     }
 
     @Override
@@ -137,7 +150,7 @@ public class GraphicalUI extends Application implements UserInterface{
         layout.add(addEntryButton,1,2);
 
         addEntryButton.setOnAction(event -> {
-            journalController.addEntry(datePicker.getValue(),entryTextField.getText());
+            addEntry(datePicker.getValue(),entryTextField.getText());
             datePicker.setValue(null);
             entryTextField.clear();
         });
@@ -147,20 +160,20 @@ public class GraphicalUI extends Application implements UserInterface{
 
 
     private void addEntry(LocalDate date, String entry) {
-//        if (date == null || entry.isEmpty()) {
-//            showAlert("Error", "Please enter both date and entry.");
-//            return;
-//        }
-//        journalController.addEntry(date, entry);
-//        showAlert("Success", "Entry added successfully!");
+        if (date == null || entry.isEmpty()) {
+            showAlert("Error", "Please enter both date and entry.");
+            return;
+        }
+        journalController.addEntry(date, entry);
+        showAlert("Success", "Entry added successfully!");
     }
 
     private void showAlert(String title, String content) {
-//        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//        alert.setTitle(title);
-//        alert.setHeaderText(null);
-//        alert.setContentText(content);
-//        alert.showAndWait();
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
     }
 
     @Override
