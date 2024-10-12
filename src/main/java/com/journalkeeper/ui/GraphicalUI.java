@@ -111,18 +111,15 @@ public class GraphicalUI extends Application implements UserInterface{
 
         GridPane layout = new GridPane();
 
-        layout.setHgap(15);  // 15px space between columns
-        layout.setVgap(10);  // 10px space between rows
+        layout.setHgap(15);
+        layout.setVgap(10);
 
-        // Add padding around the GridPane
         layout.setPadding(new Insets(20, 20, 20, 20));
 
         layout.setAlignment(Pos.CENTER);
 
         Label date = new Label("Enter date (YYYY-MM-DD) ");
-        TextField dateTextField = new TextField();
-
-        dateTextField.setMaxWidth(150);
+        DatePicker datePicker = new DatePicker();
 
         Label entry = new Label("Enter your journal entry ");
         TextArea entryTextField = new TextArea();
@@ -132,7 +129,7 @@ public class GraphicalUI extends Application implements UserInterface{
         entryTextField.setWrapText(true);
 
         layout.add(date,0,0);
-        layout.add(dateTextField,1,0);
+        layout.add(datePicker,1,0);
 
         layout.add(entry,0,1);
         layout.add(entryTextField,1,1);
@@ -140,8 +137,8 @@ public class GraphicalUI extends Application implements UserInterface{
         layout.add(addEntryButton,1,2);
 
         addEntryButton.setOnAction(event -> {
-            journalController.addEntry(LocalDate.parse(dateTextField.getText()),entryTextField.getText());
-            dateTextField.clear();
+            journalController.addEntry(datePicker.getValue(),entryTextField.getText());
+            datePicker.setValue(null);
             entryTextField.clear();
         });
 
