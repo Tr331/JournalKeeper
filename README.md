@@ -10,7 +10,9 @@ JournalKeeper is a simple, modular Java application designed for storing, managi
 - **Separation of Concerns**: Business logic, data storage, and user interaction are handled in separate layers, adhering to SOLID principles.
 
 ## Preview
-![image](https://github.com/user-attachments/assets/6af4a76f-7caf-4fab-aa5f-8003fc548f25)
+![image](https://github.com/user-attachments/assets/d5d82e8c-191e-43c7-981b-ec2f663cb43d)
+![image](https://github.com/user-attachments/assets/bf29ad87-ad05-4cc2-85e4-4e8f616ef62f)
+![image](https://github.com/user-attachments/assets/dd56bdf7-fa8c-4236-9731-65e612fe6d50)
 
 ## Requirements
 
