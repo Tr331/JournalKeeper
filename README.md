@@ -19,6 +19,7 @@
 ## 🛠️ Requirements
 
 - Java 21 or higher
+- JavaFX //In order to use gui
 - Maven/Gradle (if using build tools)
 
 ## 🚀 Getting Started
@@ -44,15 +45,6 @@ mvn javafx:run
 ./gradlew run
 ```
 
-#### Without Build Tools:
-
-```bash
-javac --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls -d bin src/main/java/com/journalkeeper/App.java
-java --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls -cp bin com.journalkeeper.App
-```
-
-> **Note:** Replace `/path/to/javafx-sdk` with the actual path to your JavaFX SDK.
-
 ## 📱 Using the JavaFX Application
 
 1. **Add Entry**: Click the "Add Entry" button to create a new journal entry.
@@ -69,4 +61,4 @@ java --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls -cp bin
 
 ## 📄 License
 
-This project is licensed under the Apache 2.0 license - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache 2.0 license.
