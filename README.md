@@ -69,4 +69,4 @@ java --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls -cp bin
 
 ## 📄 License
 
-This project is licensed under the Apache 2.0 license - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache 2.0 license.
