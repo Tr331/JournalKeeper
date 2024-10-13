@@ -8,6 +8,7 @@ import com.journalkeeper.service.JournalService;
 import java.nio.file.Path;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class JournalController {
     private final JournalService journalService;
@@ -25,11 +26,9 @@ public class JournalController {
         if (entries.isEmpty()) {
             return "Journal is empty. No entries to display.";
         }
-        StringBuilder sb = new StringBuilder();
-        for (Journal entry : entries) {
-            sb.append(entry.toString()).append("\n");
-        }
-        return sb.toString();
+        return entries.stream()
+                .map(Journal::toString)
+                .collect(Collectors.joining("\n"));
     }
 
     public void printAllEntries() {
